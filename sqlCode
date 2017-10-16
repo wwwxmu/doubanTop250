@@ -1,0 +1,13 @@
+--创建数据库，设置utf-8
+CREATE DATABASE doubanmovie DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+--创建数据表
+CREATE TABLE `top250` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(1024) DEFAULT NULL,
+  `content` text,
+  `star` varchar(20) DEFAULT NULL,
+  `count` varchar(255) DEFAULT NULL,
+  `quote` text,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
