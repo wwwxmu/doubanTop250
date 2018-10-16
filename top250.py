@@ -49,19 +49,19 @@ def getTop250(cursor, db, start=0):
             cursor.execute(sql)
             # 提交到数据库执行
             db.commit()
-            print title + 'commit'
-        except Exception, e:
+            print(title + ' commit')
+        except Exception as e:
             # Rollback in case there is any error
             db.rollback()
-            print e
+            print(e)
 
 
 if __name__ == '__main__':
     # 打开数据库连接
-    db = MySQLdb.connect(host="localhost", user="root", passwd="123456", db="doubanmovie", charset='utf8')
+    db = MySQLdb.connect(host="localhost", user="root", passwd="", db="doubanmovie", charset='utf8')
     # 使用cursor()方法获取操作游标
     cursor = db.cursor()
-    for i in range(0,25):
+    for i in range(0,10):
         getTop250(cursor, db, i*25)
         # 暂停10s
         time.sleep(10)
